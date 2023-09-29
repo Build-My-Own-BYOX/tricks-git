@@ -45,3 +45,6 @@ And (again), this repo focuses on providing quick look, not a wikipedia with lon
 8. todo: cherry pick
 
 9. todo: githooks
+
+
+## TODO: place categories into folders
