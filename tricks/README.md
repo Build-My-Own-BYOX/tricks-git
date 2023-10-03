@@ -20,8 +20,60 @@
 - Need to force push after amending the commit `git push --force <remoteName> <branchName>`
 - Reference: https://linuxize.com/post/change-git-commit-message/
 
-4. todo: githooks
+4. Run test before pushing
+- Use `pre-push GIT HOOKS`. 
+- Example: Write test command to the file `.git/hooks/pre-push`
+- However, a better practice would be use `pre-commit`, which is running hooks before committing
+- For more detail, visit [here](../terms/githooks.md)
+- Reference: 
+    - `pre-push`: https://benfrain.com/a-git-pre-push-hook-to-run-tests-on-a-particular-branch-when-you-push/
+    - `pre-commit`: https://blog.devgenius.io/automate-unit-tests-before-each-commit-by-git-hook-f331f0499786
+- Notes: team should not rely comprehensively on githooks because: 
+    - Really easy to bypass githooks with `--no-verify`
+    - githooks stay in `.git`, which is not shared between teams
+    - Enforcement should come from the remote repository
+- Alternative for `githooks` is finding [support from IDE](https://www.jetbrains.com/go/guide/tips/vcs-run-tests-before-commit/)
 
-5. todo: revert a pushed commit
+5. Skip git hooks when committing/pushing
+- Use `--no-verify`
+- Example
+    - Skip `pre-commit`:
+        ```bash
+        git commit --no-verify -m "commit message"
+        ```
+    
+    - Skip `pre-push`:
+        ```bash
+        git push --no-verify
+        ```
+- However, some commands such as `cherry-pick` does not support `--no-verify`. The easiest bypass solution is to comment those hooks temporarily.
+- Reference: https://stackoverflow.com/questions/7230820/skip-git-commit-hooks
 
-6. todo: cherry pick
+6. Share git hooks with team
+- Reason: git hooks stay in `.git`, hence not pushed to remote repositoyr -> got to find a workaround to share these hooks with team
+- Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use
+    - [RECOMMEND] config hooks path with 
+
+        ```bash
+        git config core.hooksPath <folder_name>
+        ```
+
+    - setup symlinks 
+
+        ```bash
+        ln -s <folder_name> ".git/hooks"
+        ```
+- Put any githook setup to a script and ask your team to run it. Example:
+
+    ```bash
+    #!/bin/bash
+
+    git config core.hooksPath <folder_name>
+    ```
+- Reference: 
+    - https://stackoverflow.com/a/37861972
+
+10000. todo: 
+- better format for a commit msg
+- revert a pushed commit
+- cherry pick
