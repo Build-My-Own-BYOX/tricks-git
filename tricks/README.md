@@ -101,7 +101,22 @@
     - test
 - Reference: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
 
+8. Revert the last commit
+- Use `reset`
+
+    ```bash
+    git reset --soft HEAD~1
+    ```
+- Add alias by writing to `~/.gitconfig`
+    ```
+    [alias]
+        undo = reset --soft HEAD~1
+    ```
+
+    Then you can use `git undo` everywhere in your machine.
+
+- Reference: https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg#comment-2bo1
+
+
 10000. todo: 
-- better format for a commit msg
-- revert a pushed commit
 - cherry pick
