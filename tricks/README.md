@@ -101,7 +101,7 @@
     - test
 - Reference: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
 
-8. Revert the last commit
+8. Undo the last commit
 - Use `reset`
 
     ```bash
@@ -115,9 +115,13 @@
 
     Then you can use `git undo` everywhere in your machine.
 
+- Note: `--soft` will only revert commit and keep changes in staged state. 
+    - to make changes in unstaged state: use `--mixed`
+    - to delete changes entirely: use `--hard`
+
 - Reference: https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg#comment-2bo1
 
-- test change
-
 10000. todo: 
+- revert a commit by hash
 - cherry pick
+- add common aliases for git: https://opensource.com/article/20/11/git-aliases

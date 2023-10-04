@@ -14,3 +14,5 @@
     - https://gist.github.com/tsrivishnu/a2f3adbbca9fcad5f3597af301ad1abb
 
 2. todo: merge conflict -> this is a very big topic
+
+3. todo: undo git reset --hard HEAD~1
