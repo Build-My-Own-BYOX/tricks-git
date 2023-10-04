@@ -73,6 +73,34 @@
 - Reference: 
     - https://stackoverflow.com/a/37861972
 
+7. Better commit message
+- Use gitmoji: https://github.com/carloscuesta/gitmoji
+    - Example: use vscode extension: https://github.com/seatonjiang/gitmoji-vscode
+- Rules for writing good commit message:
+    - write as giving order: start the sentence with verb
+    - prefix with commit type, e.g., Bugfix, Update
+    - NO filler words, e.g., I think
+- Answer these questions when writing commit:
+    - Why is these changes needed?
+    - What are the changes in reference to?
+- Some recommended commit types:
+    - feat: new feature
+    - fix: bug fix
+    - refactor: clean & refactor code
+    - docs: add/update documentation
+    - test: add/update tests
+    - perf: improve performance
+    - ci: CI/CD related
+- Examples of good commit message: 
+    - feat: improve performance with lazy load implementation for images
+    - fix: bug preventing users from submitting the subscribe form
+- Examples of bad commit message:
+    - fixed bug on landing page
+    - oops
+    - tmp
+    - test
+- Reference: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
+
 10000. todo: 
 - better format for a commit msg
 - revert a pushed commit
