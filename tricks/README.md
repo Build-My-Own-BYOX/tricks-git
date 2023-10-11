@@ -156,7 +156,7 @@
         ```bash
         ln -s <folder_name> ".git/hooks"
         ```
-- Put any githook setup to a script and ask your team to run it. Example:
+- SUPER TIP: Automate the sharing process by putting any githook setup to a script and ask your team to run it. Example:
 
     ```bash
     #!/bin/bash
