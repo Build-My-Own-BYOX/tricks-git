@@ -102,7 +102,7 @@
 
 ## Others
 1. Share git hooks with team
-- Reason: git hooks stay in `.git`, hence not pushed to remote repositoyr -> got to find a workaround to share these hooks with team
+- Reason: git hooks stay in `.git`, hence not pushed to remote repository -> got to find a workaround to share these hooks with team
 - Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use
     - [RECOMMEND] config hooks path with 
 
