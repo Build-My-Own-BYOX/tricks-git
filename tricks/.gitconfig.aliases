@@ -1,0 +1,12 @@
+[alias]
+	undo = reset --soft HEAD~1
+    search = ! git branch -a | sed '/->/d' | sed 's/\\*//' | xargs git grep -n -I
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	last = log -1 head
+    cm = commit -m
+
+
+
+# References: 
+- https://gist.github.com/GaetanoPiazzolla/3715ea8836154a84a545b97f62769300
+- https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg#comment-2bo1

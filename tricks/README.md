@@ -166,8 +166,20 @@
 - Reference: 
     - https://stackoverflow.com/a/37861972
 
-## TODO
+2. Common aliases
+- Add a new alias with format `{command} = {bash}` in `~/.gitconfig` file, under `[alias]` section
 
+    ```
+    [alias]
+	    undo = reset --soft HEAD~1
+    ```
+
+- A nice aliase sample file is: [here](./.gitconfig.aliases)
+- References: 
+    - https://opensource.com/article/20/11/git-aliases
+    - https://gist.github.com/GaetanoPiazzolla/3715ea8836154a84a545b97f62769300
+
+## TODO
 - revert a commit by hash
 - cherry pick
-- add common aliases for git: https://opensource.com/article/20/11/git-aliases
+- write a script to prepare tips needed for a project, e.g., prepare githooks, config aliases
