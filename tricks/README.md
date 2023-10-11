@@ -79,13 +79,55 @@
     - test
 - Reference: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
 
-4. Undo the last commit
+4. Multiple-line commit message
+- Do not close the quote & hit 'enter'
+
+    ```bash
+    git commit -m "1. first changed
+    2. second changed
+    "
+    ```
+
+- Another solution is using multiple `-m`
+
+    ```bash
+    git commit -m "1. first changed" -m "2. second changed"
+    ```
+
+- To view result, use `git log` (do not use `git log --oneline` because it will truncate the newlines). The content will be like:
+
+    ```
+    commit 9d7...bc8 (HEAD -> main)
+    Author: author_name <author_email>
+    Date:   Wed Oct 11 14:00:51 2023 +0700
+
+        1. first changed
+        2. second changed
+    ```
+
+    Note that, using multiple `-m` will create double newlines
+
+    ```
+    commit 9d7...bc8 (HEAD -> main)
+    Author: author_name <author_email>
+    Date:   Wed Oct 11 14:00:51 2023 +0700
+
+        1. first changed
+
+        2. second changed
+    ```
+
+- References: 
+    - https://stackoverflow.com/a/29934000
+    - https://stackoverflow.com/a/42078093
+
+5. Undo the last commit
 - Use `reset`
 
     ```bash
     git reset --soft HEAD~1
     ```
-- Add alias by writing to `~/.gitconfig`
+- SUPER TIPS: Add alias by writing to `~/.gitconfig`
     ```
     [alias]
         undo = reset --soft HEAD~1
@@ -98,7 +140,6 @@
     - to delete changes entirely: use `--hard`
 
 - Reference: https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg#comment-2bo1
-
 
 ## Others
 1. Share git hooks with team
@@ -130,4 +171,3 @@
 - revert a commit by hash
 - cherry pick
 - add common aliases for git: https://opensource.com/article/20/11/git-aliases
-- multiple commit message
