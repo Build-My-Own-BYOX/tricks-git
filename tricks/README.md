@@ -1,6 +1,11 @@
 # Tricks
 
 ## Setup phase
+
+### Ignore files
+- Add those files to `.gitignore`
+- To use specific template for specific project, take a look at https://github.com/github/gitignore
+
 ### Share git hooks with team
 - Reason: git hooks stay in `.git`, hence not pushed to remote repository -> got to find a workaround to share these hooks with team
 - Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use
@@ -33,7 +38,7 @@
 	    undo = reset --soft HEAD~1
     ```
 
-- A nice aliase sample file is: [here](./.gitconfig.aliases)
+- A nice aliase sample file is: [here](./.gitconfig.aliases.sample)
 - References: 
     - https://opensource.com/article/20/11/git-aliases
     - https://gist.github.com/GaetanoPiazzolla/3715ea8836154a84a545b97f62769300
@@ -182,12 +187,29 @@
 
 ## Others
 
+### View a file of another branch
+- Use command `git show`. The format is 
+
+    ```
+    git show <branch_name>:<file_path>
+    ```
+
+- Example: 
+
+    ```
+    git show main:README.md
+    ```
+
+- Reference: https://opensource.com/article/20/10/advanced-git-tips
+
 ## TODO
 - revert a commit by hash
 - cherry pick
+- global gitignore
 - write a script to prepare tips needed for a project, e.g., prepare githooks, config aliases
 
 - Ref: 
     - https://gist.github.com/hofmannsven/6814451
     - https://github.com/RehanSaeed/Git-Cheat-Sheet
     - https://gist.github.com/luismts/495d982e8c5b1a0ced4a57cf3d93cf60
+    - https://github.com/git-tips/tips
