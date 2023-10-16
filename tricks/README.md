@@ -1,5 +1,43 @@
 # Tricks
 
+## Setup phase
+### Share git hooks with team
+- Reason: git hooks stay in `.git`, hence not pushed to remote repository -> got to find a workaround to share these hooks with team
+- Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use
+    - [RECOMMEND] config hooks path with 
+
+        ```bash
+        git config core.hooksPath <folder_name>
+        ```
+
+    - setup symlinks 
+
+        ```bash
+        ln -s <folder_name> ".git/hooks"
+        ```
+- SUPER TIP: Automate the sharing process by putting any githook setup to a script and ask your team to run it. Example:
+
+    ```bash
+    #!/bin/bash
+
+    git config core.hooksPath <folder_name>
+    ```
+- Reference: 
+    - https://stackoverflow.com/a/37861972
+
+### Common aliases
+- Add a new alias with format `{command} = {bash}` in `~/.gitconfig` file, under `[alias]` section
+
+    ```
+    [alias]
+	    undo = reset --soft HEAD~1
+    ```
+
+- A nice aliase sample file is: [here](./.gitconfig.aliases)
+- References: 
+    - https://opensource.com/article/20/11/git-aliases
+    - https://gist.github.com/GaetanoPiazzolla/3715ea8836154a84a545b97f62769300
+
 ## Push
 
 ### Push an empty folder
@@ -143,42 +181,6 @@
 - Reference: https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg#comment-2bo1
 
 ## Others
-### Share git hooks with team
-- Reason: git hooks stay in `.git`, hence not pushed to remote repository -> got to find a workaround to share these hooks with team
-- Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use
-    - [RECOMMEND] config hooks path with 
-
-        ```bash
-        git config core.hooksPath <folder_name>
-        ```
-
-    - setup symlinks 
-
-        ```bash
-        ln -s <folder_name> ".git/hooks"
-        ```
-- SUPER TIP: Automate the sharing process by putting any githook setup to a script and ask your team to run it. Example:
-
-    ```bash
-    #!/bin/bash
-
-    git config core.hooksPath <folder_name>
-    ```
-- Reference: 
-    - https://stackoverflow.com/a/37861972
-
-### Common aliases
-- Add a new alias with format `{command} = {bash}` in `~/.gitconfig` file, under `[alias]` section
-
-    ```
-    [alias]
-	    undo = reset --soft HEAD~1
-    ```
-
-- A nice aliase sample file is: [here](./.gitconfig.aliases)
-- References: 
-    - https://opensource.com/article/20/11/git-aliases
-    - https://gist.github.com/GaetanoPiazzolla/3715ea8836154a84a545b97f62769300
 
 ## TODO
 - revert a commit by hash
