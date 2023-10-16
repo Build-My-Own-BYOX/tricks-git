@@ -1,7 +1,8 @@
 # Tricks
 
 ## Push
-1. Push an empty folder
+
+### Push an empty folder
 - Git will ignore empty folder when we're pushing to a repo. Hence, we can put anything inside that folder to make sure it appears in the remote repo
 - Some convention for that "anything" would be ".gitkeep" or ".keep"
 - Example
@@ -13,7 +14,7 @@
     ```
 - References: https://www.freecodecamp.org/news/what-is-gitkeep/
 
-2. Run test before pushing
+### Run test before pushing
 - Use `pre-push GIT HOOKS`. 
 - Example: Write test command to the file `.git/hooks/pre-push`
 - However, a better practice would be use `pre-commit`, which is running hooks before committing
@@ -27,7 +28,7 @@
     - Enforcement should come from the remote repository
 - Alternative for `githooks` is finding [support from IDE](https://www.jetbrains.com/go/guide/tips/vcs-run-tests-before-commit/)
 
-3. Skip git hooks when committing/pushing
+### Skip git hooks when committing/pushing
 - Use `--no-verify`
 - Example
     - Skip `pre-commit`:
@@ -43,15 +44,15 @@
 - Reference: https://stackoverflow.com/questions/7230820/skip-git-commit-hooks
 
 ## Commit
-1. Edit the latest commit message
+### Edit the latest commit message
 - Use command `git commit --amend -m "New commit message"`
 - Reference: https://linuxize.com/post/change-git-commit-message/
 
-2. Edit the latest commit message that had been pushed
+### Edit the latest commit message that had been pushed
 - Need to force push after amending the commit `git push --force <remoteName> <branchName>`
 - Reference: https://linuxize.com/post/change-git-commit-message/
 
-3. Better commit message
+### Better commit message
 - Use gitmoji: https://github.com/carloscuesta/gitmoji
     - Example: use vscode extension: https://github.com/seatonjiang/gitmoji-vscode
 - Rules for writing good commit message:
@@ -79,7 +80,7 @@
     - test
 - Reference: https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
 
-4. Multiple-line commit message
+### Multiple-line commit message
 - Do not close the quote & hit 'enter'
 
     ```bash
@@ -121,7 +122,7 @@
     - https://stackoverflow.com/a/29934000
     - https://stackoverflow.com/a/42078093
 
-5. Undo the last commit
+### Undo the last commit
 - Use `reset`
 
     ```bash
@@ -142,7 +143,7 @@
 - Reference: https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg#comment-2bo1
 
 ## Others
-1. Share git hooks with team
+### Share git hooks with team
 - Reason: git hooks stay in `.git`, hence not pushed to remote repository -> got to find a workaround to share these hooks with team
 - Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use
     - [RECOMMEND] config hooks path with 
@@ -166,7 +167,7 @@
 - Reference: 
     - https://stackoverflow.com/a/37861972
 
-2. Common aliases
+### Common aliases
 - Add a new alias with format `{command} = {bash}` in `~/.gitconfig` file, under `[alias]` section
 
     ```
@@ -183,3 +184,8 @@
 - revert a commit by hash
 - cherry pick
 - write a script to prepare tips needed for a project, e.g., prepare githooks, config aliases
+
+- Ref: 
+    - https://gist.github.com/hofmannsven/6814451
+    - https://github.com/RehanSaeed/Git-Cheat-Sheet
+    - https://gist.github.com/luismts/495d982e8c5b1a0ced4a57cf3d93cf60

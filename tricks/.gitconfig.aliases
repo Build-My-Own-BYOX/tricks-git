@@ -1,9 +1,9 @@
 [alias]
 	undo = reset --soft HEAD~1
-    search = ! git branch -a | sed '/->/d' | sed 's/\\*//' | xargs git grep -n -I
+	search = ! git branch -a | sed '/->/d' | sed 's/\\*//' | xargs git grep -n -I
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	last = log -1 head
-    cm = commit -m
+	cm = commit -m
 
 
 

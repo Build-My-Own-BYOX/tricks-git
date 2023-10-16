@@ -1,6 +1,6 @@
 # Troubleshooting
 
-1. Troubleshooting: Ignore files that had been pushed to the repo
+### Troubleshooting: Ignore files that had been pushed to the repo
 - You need to *untrack* those files (*NOT DELETE THEM*) with 
     ```bash
     git rm --cached filename
@@ -13,6 +13,6 @@
     - https://stackoverflow.com/a/1139797 
     - https://gist.github.com/tsrivishnu/a2f3adbbca9fcad5f3597af301ad1abb
 
-2. todo: merge conflict -> this is a very big topic
+### todo: merge conflict -> this is a very big topic
 
-3. todo: undo git reset --hard HEAD~1
+### todo: undo git reset --hard HEAD~1
