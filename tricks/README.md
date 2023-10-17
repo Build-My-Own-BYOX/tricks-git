@@ -183,7 +183,39 @@
     - to make changes in unstaged state: use `--mixed`
     - to delete changes entirely: use `--hard`
 
+    ![Git tree movements visualized](../terms/git-tree-movements.png)
+    
+- Advice: `git reset` should be used for non-pushed commits. For public commits, we should add a commit announcing that changes had been reverted. This can be done via `git revert`
+
 - Reference: https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg#comment-2bo1
+
+### Undo a public commit
+- Reason: use `git reset` is only recommended for non-pushed commits. But in the case of published commits, we should create a new commit for undoing any previous changes
+- Use `revert`
+
+    ```bash
+    git revert <commit_hash>
+    ```
+
+    Example: `git revert 57e62f0`
+- More examples: 
+
+    ```bash
+    # revert latest commit
+    git revert HEAD
+
+    # revert second latest commit 
+    git revert HEAD~1
+    ```
+
+- References: 
+    - https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg
+
+### TODO: Undo the revert
+
+
+### TODO: Undo the reset
+
 
 ## Others
 
