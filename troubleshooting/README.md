@@ -45,5 +45,23 @@
 - Note: to easily distinguish `git reset` & `git revert` in matter of syntax and behavior, just remember that `git reset` will come back to a commit, and `git revert` will undo a commit by making a new commit
 
 ### Undo the reset
+- Commits are kept in reflog for an expiration date. Hence, you're still able to undo the reset if the commits are still there in the reflog
+- Solution: view the commit hash in reflog and reset to that commit
+
+    ```bash
+    git reflog
+
+    git reset <commit_hash>
+    ```
+- Note that, it is recommended to use the same reset mode with the previous reset. Example: at first, you accidentally `git reset --hard HEAD~`. To undo, please use `git reset --hard <commit_hash>`
+- Super Tip: If reset is just done, and you just want to undo this reset, you can use `HEAD@{1}` instead of the commit hash. Example for `--mixed` mode:
+
+    ```bash
+    git reset HEAD@{1}
+    ```
+
+- References: 
+    - https://stackoverflow.com/questions/2510276/how-do-i-undo-git-reset
+    - https://stackoverflow.com/questions/5473/how-can-i-undo-git-reset-hard-head1
 
 ## todo: merge conflict -> this is a very big topic
