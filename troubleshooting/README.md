@@ -18,7 +18,7 @@
 ## Commit
 
 ### Undo the revert
-- If you revert a commit in your local repo accidentally, it's recommended to use `git reset` (because that revert commit has not been published)
+- If you revert a commit in your local repo accidentally, it's recommended to use `git reset` (because that revert commit has not been published) to undo that revert commit
     
     ```bash
     git reset --hard HEAD^
@@ -44,6 +44,6 @@
 
 - Note: to easily distinguish `git reset` & `git revert` in matter of syntax and behavior, just remember that `git reset` will come back to a commit, and `git revert` will undo a commit by making a new commit
 
-### TODO: Undo the reset
+### Undo the reset
 
 ## todo: merge conflict -> this is a very big topic
