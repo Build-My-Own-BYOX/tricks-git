@@ -211,11 +211,6 @@
 - References: 
     - https://dev.to/isabelcmdcosta/how-to-undo-the-last-commit--31mg
 
-### TODO: Undo the revert
-
-
-### TODO: Undo the reset
-
 
 ## Others
 
