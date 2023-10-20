@@ -40,12 +40,12 @@
     git revert HEAD
     ```
 
-    This command means we will make a new commit undo the changes made by the current commit (which is the revert commit)
+    This command means we will make a new commit undoing the changes made by the current commit (which is the revert commit)
 
 - Note: to easily distinguish `git reset` & `git revert` in matter of syntax and behavior, just remember that `git reset` will come back to a commit, and `git revert` will undo a commit by making a new commit
 
-### Undo the reset
-- Commits are kept in reflog for an expiration date. Hence, you're still able to undo the reset if the commits are still there in the reflog
+### Undo the reset for commited changes
+- Commits are kept in reflog for an expiration date. Hence, in case you accidentally reset a commit, you're still able to undo the reset if the commits are still there in the reflog
 - Solution: view the commit hash in reflog and reset to that commit
 
     ```bash
@@ -63,5 +63,16 @@
 - References: 
     - https://stackoverflow.com/questions/2510276/how-do-i-undo-git-reset
     - https://stackoverflow.com/questions/5473/how-can-i-undo-git-reset-hard-head1
+
+### Undo the reset for unstaged changes
+- Create a recovery state for files at the last `git add <file>`
+    
+    ```bash
+    git fsck --cache --no-reflogs --lost-found --dangling HEAD
+    ```
+
+- Those recovered files can be found in `.git/lost-found/other`
+- References: 
+    - https://stackoverflow.com/questions/1108853/recovering-added-staged-file-after-doing-git-reset-hard-head/1109433#1109433
 
 ## todo: merge conflict -> this is a very big topic
