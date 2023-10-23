@@ -64,7 +64,7 @@
     - https://stackoverflow.com/questions/2510276/how-do-i-undo-git-reset
     - https://stackoverflow.com/questions/5473/how-can-i-undo-git-reset-hard-head1
 
-### Undo the reset for unstaged changes
+### Undo the reset for uncommited changes (staged but not commit yet)
 - Create a recovery state for files at the last `git add <file>`
     
     ```bash
@@ -74,5 +74,7 @@
 - Those recovered files can be found in `.git/lost-found/other`
 - References: 
     - https://stackoverflow.com/questions/1108853/recovering-added-staged-file-after-doing-git-reset-hard-head/1109433#1109433
+
+### todo: undo the reset for unstaged changes
 
 ## todo: merge conflict -> this is a very big topic
