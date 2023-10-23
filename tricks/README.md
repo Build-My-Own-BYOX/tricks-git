@@ -5,10 +5,37 @@
 ### Ignore files
 - Add those files to `.gitignore`
 - To use specific template for specific project, take a look at https://github.com/github/gitignore
+- Nice .gitignore generators: 
+    - https://github.com/simonwhitaker/gibo
+    - https://www.toptal.com/developers/gitignore/
+
+### Global .gitignore
+- Reason to why we need a global .gitignore: Local .gitignore should be used for objects that should not be versioned, but still within the scope of the repo. In the case of system-specific files, it's a good practice to use global .gitignore.
+- Solution: 
+    - [RECOMMEND] the conventional global .gitignore file is `~/.config/git/ignore`
+    - [OLD_SOLUTION] create a .gitignore file and attach it with git
+        - Step 1: Create a new .gitignore file in anywhere you want
+
+            ```bash
+            touch ~/.gitignore
+            ```
+
+        - Step 2: attach that file with git's global settings
+
+            ```bash
+            git config --global core.excludesfile ~/.gitignore
+        ```
+
+        - You can verify the global .gitignore location by `git config --global core.excludesFile`
+- A nice global .gitignore template: https://github.com/github/gitignore/tree/main/Global
+
+- References: 
+    - https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer
+    - https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
 
 ### Share git hooks with team
 - Reason: git hooks stay in `.git`, hence not pushed to remote repository -> got to find a workaround to share these hooks with team
-- Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use
+- Solution: create a folder called `scripts` or `.githooks` or `git-scripts` (or any name you want) in your local repo, and use one of these methods:
     - [RECOMMEND] config hooks path with 
 
         ```bash
@@ -21,7 +48,7 @@
         ln -s <folder_name> ".git/hooks"
         ```
 - SUPER TIP: Automate the sharing process by putting any githook setup to a script and ask your team to run it. Example:
-
+``
     ```bash
     #!/bin/bash
 
@@ -230,9 +257,7 @@
 - Reference: https://opensource.com/article/20/10/advanced-git-tips
 
 ## TODO
-- revert a commit by hash
 - cherry pick
-- global gitignore
 - write a script to prepare tips needed for a project, e.g., prepare githooks, config aliases
 
 - Ref: 
