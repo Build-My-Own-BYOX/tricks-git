@@ -4,7 +4,17 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	last = log -1 head
 	cm = commit -m
-
+	reset-hard = "!f() { if [ -z \"$1\" ]; then echo \"Please specify a commit hash to reset to.\";\
+    else\
+      echo \"Are you sure you want to reset to commit $1? This action is irreversible. (y/n)\";\
+      read confirm;\
+      if [ \"$confirm\" = \"y\" ]; then\
+        git reset --hard \"$1\";\
+      else\
+        echo \"Operation canceled.\";\
+      fi;\
+    fi\
+    }; f"
 
 
 # References: 
