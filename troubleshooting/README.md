@@ -75,6 +75,4 @@
 - References: 
     - https://stackoverflow.com/questions/1108853/recovering-added-staged-file-after-doing-git-reset-hard-head/1109433#1109433
 
-### todo: undo the reset for unstaged changes
-
 ## todo: merge conflict -> this is a very big topic

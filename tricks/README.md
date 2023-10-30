@@ -4,7 +4,7 @@
 
 ### Ignore files
 - Add those files to `.gitignore`
-- To use specific template for specific project, take a look at https://github.com/github/gitignore
+- To use specific template for specific project, take a look at the official template: https://github.com/github/gitignore
 - Nice .gitignore generators: 
     - https://github.com/simonwhitaker/gibo
     - https://www.toptal.com/developers/gitignore/
@@ -32,6 +32,18 @@
 - References: 
     - https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer
     - https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
+
+### Awesome git hooks
+- Take a look at: https://github.com/CompSciLauren/awesome-git-hooks
+- Git hooks can be used for 
+    - Format code & standard
+    - Run static code analysis
+    - Run unit tests
+    - Enforce commit message standards
+    - Check code complexity
+
+- References: 
+    - https://www.hatica.io/blog/pre-commit-git-hooks/
 
 ### Share git hooks with team
 - Reason: git hooks stay in `.git`, hence not pushed to remote repository -> got to find a workaround to share these hooks with team
