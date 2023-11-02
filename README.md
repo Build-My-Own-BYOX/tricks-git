@@ -6,3 +6,6 @@ Tips: Each heading will be divided to certain categories: tricks, troubleshootin
 And, mostly the title of each item would be kept as clean as possible, such that you can google search for the essential info with that title
 
 And (again), this repo focuses on providing quick look, not a wikipedia with long explanation. Hope you enjoy the dessert.
+
+# TODO: 
+- Write a script to generate agenda of tricks

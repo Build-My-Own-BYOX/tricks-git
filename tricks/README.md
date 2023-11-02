@@ -269,7 +269,6 @@
 - Reference: https://opensource.com/article/20/10/advanced-git-tips
 
 ## TODO
-- cherry pick
 - write a script to prepare tips needed for a project, e.g., prepare githooks, config aliases
 
 - Ref: 
